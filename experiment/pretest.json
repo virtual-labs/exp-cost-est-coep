@@ -2,38 +2,138 @@
   "version": 2.0,
   "questions": [
     {
-      "question": "This is a Sample Question 1?",
+      "question": "What is the primary objective of cost estimation in a process plant project?",
       "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
+         "a": "To determine the project schedule",
+        "b": "To identify the project risks",
+        "c": "To establish a budget for the project",
+        "d": "To select the project location"
       },
-      "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
-      },
-      "correctAnswer": "a",
+      
+      "correctAnswer": "c",
       "difficulty": "beginner"
     },
     {
-      "question": "This is a Sample Question 2?",
+      "question": "Which of the following is a type of cost estimation method?",
       "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
+        "a": "Bottom-up estimating",
+        "b": "Top-down estimating",
+        "c": "Three-point estimating",
+        "d": "All mentioned"
       },
-      "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
+     
+      "correctAnswer": "d",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "What is the term for the cost of equipment, materials, and labor required to construct a process plant?",
+      "answers": {
+        "a": "Capital Expenditure (CapEx)",
+        "b": "Operating Expenditure (OpEx)",
+        "c": "Maintenance Expenditure (MaintEx)",
+        "d": "Revenue Expenditure (RevEx)"
       },
+     
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    },
+	{
+      "question": "Which of the following is a factor that affects the accuracy of cost estimation?",
+      "answers": {
+        "a": "Project complexity",
+        "b": "Availability of historical data",
+        "c": "Team experience",
+        "d": "All mentioned"
+		
+      },
+     
+      "correctAnswer": "d",
+      "difficulty": "beginner"
+    },
+	
+	{
+      "question": "What is the purpose of a Work Breakdown Structure (WBS) in cost estimation?",
+      "answers": {
+        "a": "To identify project risks",
+        "b": "To develop a project schedule",
+        "c": "To estimate costs at a detailed level",
+        "d": "To allocate resources to tasks"
+      },
+     
       "correctAnswer": "c",
       "difficulty": "beginner"
+    },
+	
+	{
+      "question": "Which of the following cost estimation techniques is based on the idea that the cost of a project is proportional to the cost of a similar project?",
+      "answers": {
+        "a": "Analogy estimating",
+        "b": "Bottom-up estimating",
+        "c": "Top-down estimating",
+        "d": "Parametric estimating"
+      },
+     
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    },
+	
+	{
+      "question": "What is the term for the cost of operating and maintaining a process plant over its lifetime?",
+      "answers": {
+        "a": "Capital Expenditure (CapEx)",
+        "b": "Operating Expenditure (OpEx)",
+        "c": "Maintenance Expenditure (MaintEx)",
+        "d": "Revenue Expenditure (RevEx)"
+      },
+     
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+	
+	{
+      "question": "Which of the following is a type of cost that is incurred during the operation of a process plant?",
+      "answers": {
+        "a": "Fixed cost",
+        "b": "Variable cost",
+        "c": "Sunk cost",
+        "d": "All mentioned"
+      },
+     
+      "correctAnswer": "d",
+      "difficulty": "beginner"
+    },
+	
+	{
+      "question": "What is the purpose of a cost contingency in cost estimation?",
+      "answers": {
+        "a": "To account for unexpected expenses",
+        "b": "To allocate resources to tasks",
+        "c": "To develop a project schedule",
+        "d": "To identify project risks"
+      },
+     
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    },
+	
+	{
+      "question": "Which of the following is a best practice in cost estimation for process plant projects?",
+      "answers": {
+        "a": "Using a single cost estimation method",
+        "b": "Using multiple cost estimation methods",
+        "c": "Ignoring cost contingencies",
+        "d": "Not updating cost estimates during the project"
+      },
+     
+      "correctAnswer": "b",
+      "difficulty": "beginner"
     }
+  
+  
+  
+  
+  
+  
+  
   ]
 }

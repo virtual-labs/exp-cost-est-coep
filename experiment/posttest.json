@@ -2,38 +2,136 @@
   "version": 2.0,
   "questions": [
     {
-      "question": "This is a Sample Question 1?",
+      "question": "What was the primary objective of the cost estimation exercise in the project?",
       "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
+         "a": "To determine the project schedule",
+        "b": "To identify the project risks",
+        "c": "To establish a budget for the project",
+        "d": "To select the project location"
+		
       },
-      "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
-      },
-      "correctAnswer": "a",
+      
+      "correctAnswer": "c",
       "difficulty": "beginner"
     },
     {
-      "question": "This is a Sample Question 2?",
+      "question": "Which cost estimation method was used in the project of automation?",
       "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
+        "a": "Bottom-up estimating",
+        "b": "Top-down estimating",
+        "c": "Analogous estimating",
+        "d": "Parametric estimating"
       },
-      "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
+     
+      "correctAnswer": "c",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "What was the total estimated cost of the project related to establishing a pilot plant of spray dryer?",
+      "answers": {
+        "a": "Rs. 2 Crore",
+        "b": "Rs. 20 Crore",
+        "c": "Rs. 20 Lakhs",
+        "d": "Rs. 30 Crore"
       },
+     
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    },
+	{
+      "question": "Which of the following was a major cost driver in the project?",
+      "answers": {
+        "a": "Equipment costs",
+        "b": "Labor costs",
+        "c": "Material costs",
+        "d": "Overhead costs"
+      },
+     
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    },
+	
+	{
+      "question": "What was the contingency amount allocated in the project?",
+      "answers": {
+        "a": "10% of the total estimated cost",
+        "b": "15% of the total estimated cost",
+        "c": "20% of the total estimated cost",
+        "d": "25% of the total estimated cost"
+      },
+     
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    },
+	
+	{
+      "question": "Which of the following was a risk identified during the cost estimation exercise?",
+      "answers": {
+        "a": "Delays in equipment delivery",
+        "b": "Increase in labor costs",
+        "c": "Changes in project scope",
+        "d": "All of the above"
+      },
+     
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    },
+  
+  {
+      "question": "What was the expected return on investment (ROI) for the project?",
+      "answers": {
+        "a": "10%",
+        "b": "15%",
+        "c": "20%",
+        "d": "25%"
+      },
+     
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+	
+	
+  {
+      "question": "Which of the following was a key assumption made during the cost estimation exercise?",
+      "answers": {
+        "a": "The project will be completed within 12 months",
+        "b": "The equipment costs will increase by 10% per annum",
+        "c": "The labor costs will remain constant throughout the project",
+        "d": "The project will not require any contingency funds"
+      },
+     
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    },
+  
+  
+  {
+      "question": "What was the level of accuracy achieved in the cost estimation exercise?",
+      "answers": {
+        "a": "+/- 10%",
+        "b": "+/- 15%",
+        "c": "+/- 20%",
+        "d": "+/- 25%"
+      },
+     
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    },
+  
+  
+  {
+      "question": "What was the next step after completing the cost estimation exercise?",
+      "answers": {
+        "a": "Proceed with project execution",
+        "b": "Conduct a feasibility study",
+        "c": "Develop a detailed project schedule",
+        "d": "Identify potential cost savings opportunities"
+      },
+     
       "correctAnswer": "c",
       "difficulty": "beginner"
     }
+  
+  
   ]
 }
