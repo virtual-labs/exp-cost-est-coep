@@ -1,13 +1,215 @@
-<!DOCTYPE html>
+
 <html>
 <head>
-	<!-- Add CSS at the head of HTML file -->
-    <link rel="stylesheet" href="./css/main.css">
-</head>
-<body>
-		<!-- Your code goes here-->
+<title>Cost Estimation</title>
 
-	<!-- Add JS at the bottom of HTML file --> 
-        <script src="./js/main.js"></script>
+</head>
+ <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href= "https://code.jquery.com/ui/1.13.0/themes/dark-hive/jquery-ui.css"> 
+   
+ 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">-->
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'>
+ 
+  
+<link rel="stylesheet" href="css/header.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/toastr.min.css">
+<link rel="stylesheet" href="css/question.css">
+<link rel="stylesheet" href="css/pageStyle.css">
+<link rel="stylesheet" href="css/cost.css">
+<link rel="stylesheet" href="css/result.css">
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js" integrity= "sha256-xH4q8N0pEzrZMaRmd7gQVcTZiFei+HfRTBPJ1OGXC0k=" crossorigin="anonymous"> 
+ </script>
+<style>
+#coepLogo,#vlabLogo{
+
+ pointer-events: none;
+}
+@font-face{
+ font-family:'digital-clock-font';
+ src: url('Font/digital-7.ttf');
+}
+
+</style>
+<body >
+<header>
+		<img class="COEPLogo" src='images/COEPlogo.png' id="coepLogo" disabled>
+		<img class="VlabLogo" src='images/vlablogo.jpg' id="vlabLogo" disabled>
+	    <span id="colgName">COEP TECHNOLOGICAL UNIVERSITY PUNE</span>	
+			
+	</header>
+	<div class="row container-fluid " id="landingPage">
+	<div  class="col-sm-12 " > 
+	</div>
+	</div>
+	<div  class="row container-fluid" id="buttonDiv" >	
+		<div  class="col-sm-12" > 
+			<h5 id="counter" class=" btn1 timerStyle">00:00:00</h5>
+<!-- 		 <button type="button" id="tagDetails" class="btn btn-danger btn1" data-toggle="modal" data-target="#proStr"><b>Tag Details </b></button> -->
+<!-- 	     <button type="button" id="simDemo" class="btn btn-danger btn1" data-toggle="modal" data-target="#proStr"><b>Problem statement</b> </button> -->
+		    <button type="button" id="procedure" class="btn btn-danger btn1 button1" data-toggle="modal" data-target="#proStr" hidden><b>Procedure </b></button>
+		    <button type="button" class="btn btn-danger btn1 button1"  id="report" style="margin-top:10px;"  hidden>Download report </button> 
+	     </div>
+	     
+	   
+			  
+<!-- 			    The Modal  ProStr -->
+		  <div class="modal fade " id="proStr">
+		    <div class="modal-dialog modal-xl" >
+			      <div class="modal-content">
+<!-- 		        Modal Header -->
+			        <div class="modal-header">
+		          <h4 class="modal-title"><center></center></h4>
+			          <button type="button" class="close" data-dismiss="modal">&times;</button>
+			        </div>
+<!-- 		        Modal body -->
+			        <div class="modal-body" id="proStrBody">
+		
+			        </div>
+<!-- 			        Modal footer -->
+			        <div class="modal-footer">
+<!-- 		             <button type="button" class="btn btn-danger" data-dismiss="modal" >Ok</button> -->
+			        </div>
+			      </div>
+			    </div>
+			  </div>
+<!-- 			  End Modal ProStr -->
+	     
+ 	</div>
+ 	  
+    <div class="row titlePart" id="Header" ></div>
+
+	<div class="container-fluid" style="margin-top:10px; " id="mainDiv" >
+	
+	
+<div class="row justify-content-center" style="margin-bottom:0px;">
+            <div class="col-md-8 instruction-box">
+            <h3 class="text-center" style="    color: cornflowerblue;
+    font-weight: 900;
+    font-family: emoji;">COST ESTIMATION</h3>
+              
+            </div>
+        </div>
+ <div class="row justify-content-center" style="margin-bottom:20px;">
+            <div class="col-md-8 instruction-box">
+<!--             <h4 class="text-center">COST ESTIMATION</h4> -->
+                <span class="fw-bold" style="    font-family: emoji;
+    font-size: 18px;
+    word-spacing: 1px;">As a Consulting Instrumentation Engineer you are required to prepare a cost estimation sheet  
+                as per your company standard for the plant assigned to you
+             </span>
+            </div>
+        </div>
+ <div class="row justify-content-center">
+            
+            <div class="col-md-4">
+                <div class="card p-3">
+                    <h5 class="text-center">BOILER HEAT EXCHANGER</h5>
+                    <img src="images/boilerheatExchanger.jpg" class="img-fluid rounded">
+                    <button class="btn btn-success " id="boiler" style="float:right;margin: 10px;background-color:teal;" >BOILER HEAT EXCHANGER</button>
+               
+                </div>
+            </div>
+        </div>
+       
+<!-- 	 		 <div class="row"> -->
+<!-- 	  			  <div class="col-sm-3" id="Selection" style=" border-style: double; margin-bottom: 25px;"> -->
+<!-- 	      	</div> -->
+<!-- 	    	<div class="col-sm-9" id="diagram" style=" border-style: double;margin-bottom: 18px;"> -->
+<!-- 			<!--      <img src="images/dryer12.png" class="img-fluid" style="margin-top:10px;"> --> -->
+<!-- 	    	</div> -->
+<!-- 	  	 </div> -->
+	</div>
+<footer>
+Copyrights &copy; COEPTECH - Virtual Labs
+</footer>
 </body>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.3.0/raphael.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.3.0/raphael.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/paper.js/0.12.15/paper-full.min.js"></script>
+   <script type="text/javascript" src="js/toastr.min.js"></script>
+
+ <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/stock-tools.js"></script>
+   
+   
+<script src="https://code.highcharts.com/modules/variable-pie.js"></script>
+
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+<script src="https://code.highcharts.com/modules/accessibility.js"></script>
+
+<!-- <script src="src/landingPage.js"></script> -->
+<script src="src/popupData.js"></script>
+<script src="src/stdJson.js"></script>
+<script src="src/questionJson.js"></script>
+
+<!-- Plant 2- BoilerHeatExchanger -->
+
+<script src="src/cost.js"></script>
+
+<script src="src/result.js"></script>
+<script src="src/timer.js"></script>
+
+<script>
+$( "#boiler" ).click(function() {
+	cost();
+});
+</script>
+<script>
+toastr.options = {
+        'closeButton': true,
+        'debug': false,
+        'newestOnTop': false,
+        'progressBar': false,
+        'positionClass': 'toast-bottom-right',
+        'preventDuplicates': false,
+        'showDuration': '1000',
+        'hideDuration': '1000',
+        'timeOut': '5000',
+        'extendedTimeOut': '1000',
+        'showEasing': 'swing',
+        'hideEasing': 'linear',
+        'showMethod': 'fadeIn',
+        'hideMethod': 'fadeOut',
+        'margin-bottom':'50%'
+    }
+    
+</script>
+<script >
+$("#coepLogo").click(function(evt) {
+	
+	 $('#coepLogo').off('click');
+});
+
+$('#report').on('click', function() {
+			$('#report').prop("hidden",true);
+		    html2canvas(document.querySelector("#mainDiv")).then(canvas => {
+		        // Append the screenshot canvas to the body
+		        document.body.appendChild(canvas);
+		        $("canvas").css("display","none");
+		        // Optionally save the screenshot as an image
+		        var link = document.createElement('a');
+		        link.download = 'BoilerHeatExchanger_report.png';
+		        link.href = canvas.toDataURL();
+		        link.click();
+		    });
+		});
+
+</script>
 </html>

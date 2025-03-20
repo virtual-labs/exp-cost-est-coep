@@ -1,0 +1,153 @@
+.form-select{
+	padding:10px;margin:5px;
+}
+.statement{
+border-style: double;
+    padding: 20px;
+    margin: 10px;
+    font-size: larger;
+    border-radius: 25px;
+    box-shadow: blue;
+    box-shadow: 13px 10px #ced4da;
+    margin-bottom: 30px;
+
+}
+.conf{
+	    border-style: double;
+    padding: 9px;
+    margin: 9px;
+    font-size: medium;
+    border-radius: 0px;
+    box-shadow: blue;
+    box-shadow: 7px 5px #ced4da;
+    margin-bottom: 30px;
+	
+	
+}
+.titlePart{
+font-size: larger;
+    font-weight: 700;
+    background-color: #343a40;
+    margin: 5px;
+    padding: 15px;
+    color: #fff;
+    border-style: solid;
+    border-color: aqua;
+   
+}
+.subTitle{
+/* 	font-weight: bolder; */
+ 
+    color: #dc3545;
+	
+}   
+
+    
+     /* Custom Toastr Styles */
+    .toast {
+        font-family: 'Arial', sans-serif;
+        border-radius: 10px;
+        padding: 15px;
+        margin: 10px;
+        opacity: 0.9;
+        color: #fff;
+        box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .toast-success {
+        background-color: #4caf50; /* Green for success */
+    }
+
+    .toast-error {
+        background-color: #f44336; /* Red for error */
+    }
+
+    .toast-info {
+        background-color: #2196f3; /* Blue for info */
+    }
+
+    .toast-warning {
+        background-color: #FF9800; /* Orange for warning */
+    }
+
+    .toast-message {
+        font-size: 16px;
+        line-height: 1.4;
+    }
+
+    /* Close button custom styles */
+    .toast .toast-close-button {
+        background: none;
+        border: none;
+        font-size: 20px;
+        color: #fff;
+        font-weight: bold;
+        position: absolute;
+        top: 5px;
+        right: 10px;
+        cursor: pointer;
+    }
+
+    .toast .toast-close-button:hover {
+        color: #ddd;
+    }
+
+    /* Custom animation for toast */
+    .toast.fadeIn {
+        animation: fadeIn 0.5s ease-out;
+    }
+
+    .toast.fadeOut {
+        animation: fadeOut 0.5s ease-in;
+    }
+
+    /* FadeIn and FadeOut keyframes */
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes fadeOut {
+        from {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        to {
+            opacity: 0;
+            transform: translateY(10px);
+        }
+    }
+    .phase-title {
+                font-size: 1.6rem;
+    color: #f8f9fa;
+    margin-top: 15px;
+    font-weight: 500;
+    border-bottom: 2px solid #17a2b8;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+        }
+        .activity-list {
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+        }
+        .activity-list li {
+            margin: 8px;
+        }
+        
+        .list-group activity-list{
+            background-color: #848587;
+        }
+        .note{
+        background-color: #343a40;
+    color: #f8f9fa;
+    font-size: 18px;
+    font-weight: 500;
+    margin-top: 10px;
+    padding: 10px;
+        }
