@@ -1,0 +1,77 @@
+        body {
+            font-family: Arial, sans-serif;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #214565;
+            color: white;
+        }
+        .btn-container {
+            margin: 10px 0;
+        }
+        .btn {
+            background-color: #28a745;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+        .error {
+            border: 2px solid red;
+        }
+        
+        
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    table-layout: fixed; /* Ensures proper column width */
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+    word-wrap: break-word; /* Ensures text does not overflow */
+}
+
+th {
+    background-color: #214565;
+    color: white;
+}
+
+/* Adjusting Column Width */
+th:nth-child(1), td:nth-child(1) { width: 5%; }  /* Sr. No. */
+th:nth-child(2), td:nth-child(2) { width: 20%; } /* Instrument Name */
+th:nth-child(3), td:nth-child(3) { width: 16%; } /* Make & Model */
+th:nth-child(4), td:nth-child(4) { width: 10%; } /* Base Price */
+th:nth-child(5), td:nth-child(5) { width: 7%; }  /* Packing (2%) */
+th:nth-child(6), td:nth-child(6) { width: 7%; }  /* Insurance (0.5%) */
+th:nth-child(7), td:nth-child(7) { width: 7%; }  /* Freight (1%) */
+th:nth-child(8), td:nth-child(8) { width: 10%; } /* Total Cost */
+th:nth-child(9), td:nth-child(9) { width: 7%; }  /* GST (18%) */
+th:nth-child(10), td:nth-child(10) { width: 10%; } /* Total Cost with GST */
+th:nth-child(11), td:nth-child(11) { width: 5%; }  /* Qty */
+th:nth-child(12), td:nth-child(12) { width: 10%; } /* Total Cost */
+th:nth-child(13), td:nth-child(13) { width: 7%; }  /* Action */
+
+td input, td select {
+    width: 95%;  /* Ensures proper input field size */
+    padding: 5px;
+    box-sizing: border-box;
+}
