@@ -1,11 +1,12 @@
 function result(){
 	timerMasterJson.alam=$("#counter").text();
 	console.log(timerMasterJson);
+	console.log(resultJson);
 	seconds = 0;
 	  updateCounter();
 	$("#simDemo,#procedure,#counter,#tagDetails").prop("hidden",true);
 	$("#report").prop("hidden",false);
-	$("#Header").html("<center><span >BOILER HEAT EXCHANGER PLANT(FAULT)</span></center>");
+	$("#Header").html("<center><span >COST ESTIMATION</span></center>");
 	
 	htm=''
 	+'<div class="container-fluid">'
@@ -28,7 +29,7 @@ function result(){
 	+'    </thead>'
 	+'   <tbody>'
 	+'      <tr>'
-	+'       <td><b>MIMIC</b></td>'
+	+'       <td><b>COST ESTIMATION</b></td>'
 	+'        <td id="piping">'
 	
 	+'		</td>'
@@ -36,15 +37,7 @@ function result(){
 	
 	+'       </td>'
 	+'     </tr>'
-	+'      <tr>'
-	+'        <td> <b>FAULT</b></td>'
-	+'        <td id="instr">'
-
-	+'		</td>'
-    +'        <td id="instrTimer">'
 	
-	+'       </td>'
-	+'      </tr>'
 
 //	+'       <tr>'
 //	+'        <td><b>Simulation</b></td>'
@@ -70,7 +63,7 @@ function result(){
     +'  <div class="row">'
     +'   <div class="col-md-4" >'
     +'     <div class="box">'
-    +'      <h5 class="section-title sectionStyle" >MIMIC</h5>'
+    +'      <h5 class="section-title sectionStyle" >Instrument Count</h5>'
     +'       <div class="table-container">'
     +'        <table style="border-style: solid;">'
     +'           <tr class="trStyle">'
@@ -78,15 +71,15 @@ function result(){
     +'             <th>Actual</th>'
     +'          </tr>'
     +'           <tr>'
-    +'           <td><b> <center><strong class="correct">1</strong> </center></b></td>'
-	+'           <td><b> <center><strong class="wrong">'+resultJson.startCount+'</strong> </center></b></td>'
+    +'           <td><b> <center><strong class="correct">'+resultJson.rows+'</strong> </center></b></td>'
+	+'           <td><b> <center><strong class="wrong">'+resultJson.invalidRowCount+'</strong> </center></b></td>'
 	  +'         </table>'
     +'      </div>'
     +'    </div>'
     +'   </div>'
     +'  <div class="col-md-4" >'
     +'    <div class="box">'
-    +'     <h5 class="section-title sectionStyle" >FAULT</h5>'
+    +'     <h5 class="section-title sectionStyle" >Valid Estimation</h5>'
     +'     <div class="table-container">'
 	+'       <table style="border-style: solid;">'
 	+'          <tr class="trStyle">'
@@ -95,7 +88,7 @@ function result(){
 	+'          </tr>'
 	+'          <tr>'
 	 +'						  <td><b class="correct">1</b></td>'
-	    +'                       <td><b class="wrong">'+resultJson.faultCount+'</b></td>'
+	    +'                       <td><b class="wrong">'+resultJson.flg+'</b></td>'
 	  	+'          </tr>'
 	+'        </table>'
 	+'      </div>'
@@ -201,8 +194,8 @@ function result(){
 //    +'</div>'
     $("#mainDiv").html(htm);
 	
-	var piping=parseFloat((1/resultJson.startCount)*100);
-	var instr=parseFloat((1/resultJson.faultCount)*100);
+	var piping=parseFloat((resultJson.rows/resultJson.invalidRowCount)*100);
+	
 	
 //	var startPer=parseFloat((resultJson.animationStart/3)*100);
 //	var datasheetPer=parseFloat((resultJson.datasheet/3)*100);
@@ -227,7 +220,7 @@ function result(){
 	 $("#piping").html(str);
 		 var str1=''
 	+'	     	<div class="alert alert-success attainedText">'
-	+'    	   <center><strong> '+timerMasterJson.mimic+'</strong> </center>'
+	+'    	   <center><strong> '+timerMasterJson.alam+'</strong> </center>'
 	+'     		 </div>'
 	 $("#pipingTimer").html(str1); 
 		     
@@ -241,39 +234,13 @@ function result(){
 		     $("#piping").html(str);
 		 var str1=''
 				+'	     	<div class="alert alert-danger attainedText">'
-				+'    	   <center><strong> '+timerMasterJson.mimic+'</strong> </center>'
+				+'    	   <center><strong> '+timerMasterJson.alam+'</strong> </center>'
 				+'     		 </div>'
 							     $("#pipingTimer").html(str1); 
 		 
 		 
 		}
-	if(instr>=60){
-		 var str=''
-	 +'	     	<div class="alert alert-success attainedText">'
-	+'    			 <center><strong> Attained</strong> </center>'
-	+'     		 </div>'
-		     $("#instr").html(str);
-		 var str1=''
-				+'	     	<div class="alert alert-success attainedText">'
-				+'    	   <center><strong> '+timerMasterJson.alam+'</strong> </center>'
-				+'     		 </div>'
-							     $("#instrTimer").html(str1); 
-		 	 
-		     
-	}
-	else
-		{
-		 var str=''
-			 +' <div class="alert alert-danger attainedText">'
-		    +'  <center><strong>Not Attained</strong> </center>'
-		     +'  </div>'
-		     $("#instr").html(str);
-		 var str1=''
-				+'	     	<div class="alert alert-danger attainedText">'
-				+'    	   <center><strong> '+timerMasterJson.alam+'</strong> </center>'
-				+'     		 </div>'
-							     $("#instrTimer").html(str1); 
-		}
+	
 	
 //	if(startPer>=100 && datasheetPer>=100 && trendsPer>=100){
 //		 var str=''
@@ -354,8 +321,8 @@ function result(){
 	    series: [{
 	        name: '',
 	        data: [
-	            { name: 'MIMIC', y: piping },
-	            { name: 'FAULT', y: instr }
+	            { name: 'COST ESTIMATION', y: piping }
+	            
 	            
 //	            { name: 'SIMULATION', y: simulation1 }
 	          

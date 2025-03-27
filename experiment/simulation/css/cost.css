@@ -30,6 +30,9 @@
             border: 2px solid red;
         }
         
+         .error-row {
+            background-color: #ffdddd !important;
+        }
         
 body {
     font-family: Arial, sans-serif;
