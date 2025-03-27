@@ -1,6 +1,7 @@
 
 
 var timerMasterJson = {};
+var resultJson = {}
 function cost(){
 		timerMasterJson.cost = $("#counter").text();
 	console.log(timerMasterJson);
@@ -11,6 +12,8 @@ $("#Header").html("<center><span>COST ESTIMATION</span></center>");
 	var htm = ` <div class="btn-container">
         <button class="btn add-btn" data-toggle="modal" data-target="#preReq">Add Row</button>
         <button class="btn check-btn" data-toggle="modal" data-target="#preReq">Check Values</button>
+         <button class="btn auto-correct-btn" data-toggle="modal" data-target="#preReq"  >Correct Values</button>
+        <button class="btn result"  >Result</button> 
     </div>
 
     <table id="dynamicTable">
@@ -141,7 +144,7 @@ $("#Header").html("<center><span>COST ESTIMATION</span></center>");
             $(".add-btn").click(function() {
               
                     let isValid = true;
-
+					
                 $(".instrument-name, .base-price, .quantity").each(function() {
                     let value = $(this).val().trim();
                     
@@ -169,9 +172,104 @@ $("#Header").html("<center><span>COST ESTIMATION</span></center>");
                      showModal(`<strong style="color:#153f68;font-size: large;"> Adding a new row.</strong>`);
 					
 				}
+				
+				
+				 let basaCorr= 0 ;
+			 if (name == 1){
+				 basaCorr = 12500; 
+				 
+			 }else if(name == 2){
+				  basaCorr = 8500; 
+				 
+			 }else if(name == 3){
+				  basaCorr = 9500; 
+				 
+			 }else if (name == 4){
+				 basaCorr = 14500; 
+				
+			 }else if(name == 5){
+				 basaCorr = 12500; 
+				  
+			 }else if(name == 6){
+				 basaCorr = 7500; 
+				
+			 }else if(name == 7){
+				 basaCorr = 35000; 
+				
+			 }else if(name == 8){
+				 basaCorr = 35000; 
+				
+			 }else if (name == 9){
+				  basaCorr = 7500;
+			 }else if (name == 10){
+				  basaCorr = 55000;
+			 }else if (name == 11){
+				  basaCorr = 45000;
+			 }else if (name == 12){
+				  basaCorr = 45000;
+			 }else if (name == 13){
+				  basaCorr = 13500;
+			 }else if (name == 14){
+				  basaCorr = 9750;
+			 }else if (name == 15){
+				  basaCorr = 15600;
+			 }else if (name == 16){
+				  basaCorr = 28500;
+			 }else if (name == 17){
+				  basaCorr = 45500;
+			 }else if (name == 18){
+				  basaCorr = 85000;
+			 }else if (name == 19){
+				  basaCorr = 13500;
+			 }else if (name == 20){
+				  basaCorr = 28000;
+			 }else if (name == 21){
+				  basaCorr = 43000;
+			 }else if (name == 22){
+				  basaCorr = 78000;
+			 }else if (name == 23){
+				  basaCorr = 38800;
+			 }else if (name == 24){
+				  basaCorr = 23500;
+			 }else if (name == 25){
+				  basaCorr = 225000;
+			 }else if (name == 26){
+				  basaCorr = 350000;
+			 }else if (name == 27){
+				  basaCorr = 45000000;
+			 }else if (name == 28){
+				  basaCorr = 225000;
+			 }else if (name == 29){
+				  basaCorr = 650000;
+			 }else if (name == 30){
+				  basaCorr = 35000;
+			 }else if (name == 31){
+				  basaCorr = 1800000;
+			 }else if (name == 32){
+				  basaCorr = 15600;
+			 }
+			 
+			let minRange = basaCorr - (basaCorr * 0.30); // 30% less
+			let maxRange = basaCorr + (basaCorr * 0.30); // 30% more
+			 function isValidAmount(amount) {
+   			 return amount >= minRange && amount <= maxRange;
+			}
+			console.log(minRange);
+			console.log(maxRange);
+			if (isValidAmount(basePrice)) {
+				
+   			 console.log("Valid amount within ±30% range.");
+			} else {
+    		console.log("Invalid amount! Out of range.");
+			}
             });
 
+
+
+
             $(document).on("click", ".remove-btn", function() {
+				
+				
                 if ($("#dynamicTable tbody tr").length > 1) {
                     $(this).closest("tr").remove();
                     updateRowNumbers();
@@ -187,6 +285,7 @@ $("#Header").html("<center><span>COST ESTIMATION</span></center>");
                 let qty = parseInt(row.find(".quantity").val()) || 1;
                 let name =  row.find(".instrument-name").val();
                 console.log(name);
+                  
                 
                 if(name == 31){
 					  let packing = basePrice * 0;
@@ -196,7 +295,7 @@ $("#Header").html("<center><span>COST ESTIMATION</span></center>");
                       let gst = totalCost * 0.18;
                      let totalWithGst = totalCost + gst;
                      let finalTotal = totalWithGst * qty;
-                 if ($("#dynamicTable tbody tr").length > 1) {    
+                 if ($("#dynamicTable tbody tr").length > 0) {    
                 row.find(".packing").val(packing.toFixed(2));
                 row.find(".insurance").val(insurance.toFixed(2));
                 row.find(".freight").val(freight.toFixed(2));
@@ -212,7 +311,7 @@ $("#Header").html("<center><span>COST ESTIMATION</span></center>");
                 let gst = totalCost * 0.18;
                 let totalWithGst = totalCost + gst;
                 let finalTotal = totalWithGst * qty;
-				if ($("#dynamicTable tbody tr").length > 1) {
+				if ($("#dynamicTable tbody tr").length > 0) {  // input rows
                 row.find(".packing").val(packing.toFixed(2));
                 row.find(".insurance").val(insurance.toFixed(2));
                 row.find(".freight").val(freight.toFixed(2));
@@ -224,12 +323,13 @@ $("#Header").html("<center><span>COST ESTIMATION</span></center>");
 //                row.find(".total-final-cost").val(finalTotal.toFixed(2));
             });
             
-            
+             let basePrice = 0;
+              let name = 0;
              $(document).on( "input", " .quantity", function() {
                 let row = $(this).closest("tr");
-                let basePrice = parseFloat(row.find(".base-price").val()) || 0;
+               basePrice = parseFloat(row.find(".base-price").val()) || 0;
                 let qty = parseInt(row.find(".quantity").val()) || 1;
-                let name =  row.find(".instrument-name").val();
+                name =  row.find(".instrument-name").val();
                  if(name == 31){
 					  let packing = basePrice * 0;
                		  let insurance = basePrice * 0;
@@ -238,7 +338,7 @@ $("#Header").html("<center><span>COST ESTIMATION</span></center>");
                       let gst = totalCost * 0.18;
                      let totalWithGst = totalCost + gst;
                      let finalTotal = totalWithGst * qty;
-                 if ($("#dynamicTable tbody tr").length > 1) {    
+                 if ($("#dynamicTable tbody tr").length > 0) {    
                 row.find(".packing").val(packing.toFixed(2));
                 row.find(".insurance").val(insurance.toFixed(2));
                 row.find(".freight").val(freight.toFixed(2));
@@ -256,7 +356,7 @@ $("#Header").html("<center><span>COST ESTIMATION</span></center>");
                 let gst = totalCost * 0.18;
                 let totalWithGst = totalCost + gst;
                 let finalTotal = totalWithGst * qty;
-				if ($("#dynamicTable tbody tr").length > 1) {
+				if ($("#dynamicTable tbody tr").length > 0) {
                 row.find(".packing").val(packing.toFixed(2));
                 row.find(".insurance").val(insurance.toFixed(2));
                 row.find(".freight").val(freight.toFixed(2));
@@ -271,8 +371,9 @@ $("#Header").html("<center><span>COST ESTIMATION</span></center>");
              
                
             });
-
+ let flg = 0;
             $(".check-btn").click(function() {
+			
                 let isValid = true;
                 $(" .base-price, .quantity,.packing,.insurance,.freight,.total-cost,.gst,.total-cost-gst,.total-final-cost").each(function() {
                     if ($(this).val().trim() === "") {
@@ -289,6 +390,178 @@ $("#Header").html("<center><span>COST ESTIMATION</span></center>");
                     
                     showModal(`<strong style="color:#153f68;font-size: large;">All values are entered correctly</strong>`);
                 }
-            });
-        });
+                
+                
+    let validRowCount = 0;
+    let invalidRowCount = 0;
+   
+        let requiredSet = {
+        9: 3,   // Name 1 → Quantity must be 1
+        24: 1,   // Name 2 → Quantity must be 3
+        3: 1,   // Name 3 → Quantity must be 1
+        5: 2,   // Name 5 → Quantity must be 2
+        10: 4,  // Name 10 → Quantity must be 4
+        20: 2   // Name 20 → Quantity must be 2
+    };
+	
+    $("#dynamicTable tbody tr").each(function() {
+        let row = $(this);
+        let basePrice = parseFloat(row.find(".base-price").val()) || 0;
+        let name = row.find(".instrument-name").val();
+        let quantity = parseInt(row.find(".quantity").val()) || 1;
+        let autoCorrect = false;
+        resultJson.rows = $("#dynamicTable tbody tr").length;
+
+        let basaCorr = 0;
+
+
+        if (name == 1) { basaCorr = 12500; }
+        else if (name == 2) { basaCorr = 8500; }
+        else if (name == 3) { basaCorr = 9500; }
+        else if (name == 4) { basaCorr = 14500; }
+        else if (name == 5) { basaCorr = 12500; }
+        else if (name == 6) { basaCorr = 7500; }
+        else if (name == 7) { basaCorr = 35000; }
+        else if (name == 8) { basaCorr = 35000; }
+        else if (name == 9) { basaCorr = 7500; }
+        else if (name == 10) { basaCorr = 55000; }
+        else if (name == 11) { basaCorr = 45000; }
+        else if (name == 12) { basaCorr = 45000; }
+        else if (name == 13) { basaCorr = 13500; }
+        else if (name == 14) { basaCorr = 9750; }
+        else if (name == 15) { basaCorr = 15600; }
+        else if (name == 16) { basaCorr = 28500; }
+        else if (name == 17) { basaCorr = 45500; }
+        else if (name == 18) { basaCorr = 85000; }
+        else if (name == 19) { basaCorr = 13500; }
+        else if (name == 20) { basaCorr = 28000; }
+        else if (name == 21) { basaCorr = 43000; }
+        else if (name == 22) { basaCorr = 78000; }
+        else if (name == 23) { basaCorr = 38800; }
+        else if (name == 24) { basaCorr = 23500; }
+        else if (name == 25) { basaCorr = 225000; }
+        else if (name == 26) { basaCorr = 350000; }
+        else if (name == 27) { basaCorr = 45000000; }
+        else if (name == 28) { basaCorr = 225000; }
+        else if (name == 29) { basaCorr = 650000; }
+        else if (name == 30) { basaCorr = 35000; }
+        else if (name == 31) { basaCorr = 1800000; }
+        else if (name == 32) { basaCorr = 15600; }
+
+        let minRange = basaCorr - (basaCorr * 0.30);
+        let maxRange = basaCorr + (basaCorr * 0.30);
+
+        function isValidAmount(amount) {
+            return amount >= minRange && amount <= maxRange;
+        }
+       
+
+        if (requiredSet[name] !== undefined && requiredSet[name] === quantity &&isValidAmount(basePrice)) {
+            validRowCount++;
+            row.removeClass("error-row"); // Remove error class if previously added
+        } else {
+            invalidRowCount++;
+            row.addClass("error-row"); // Apply error class to invalid rows
+            autoCorrect = true; // Mark that correction is needed
+            resultJson.invalidRowCount = invalidRowCount;
+        }
+ 
+
+    // Display the result in a modal
+//    showModal(`
+//        <strong style="color:#153f68;font-size: large;">Total Valid Rows: ${validRowCount}</strong><br>
+//        <strong style="color:red;font-size: large;">Total Invalid Rows: ${invalidRowCount}</strong>
+//    `);
+    
+        if (autoCorrect) {
+			flg ++;
+			
+        // Show correction message and ask the user to correct values
+        showModal(`
+            <strong style="color:red;font-size: large;">${invalidRowCount} rows are invalid!</strong><br>
+            Please correct them and click "Check" again.
+        `);
+       
+    } else {
+        // All values are correct, show the final message
+        showModal(`
+            <strong style="color:#153f68;font-size: large;">Total Valid Rows: ${validRowCount}</strong><br>
+            <strong style="color:red;font-size: large;">Total Invalid Rows: ${invalidRowCount}</strong>
+        `);
+    }
+		
+		
+		 
+        if(flg === 3){
+			 resultJson.flg = flg;
+			$(".auto-correct-btn").show();  
+		}
+		
+       });         
+                
+               
+          });
+      
+      
+      // Auto-correct values on second click
+$(".auto-correct-btn").click(function() {
+    $("#dynamicTable tbody tr").each(function() {
+        let row = $(this);
+        let name = row.find(".instrument-name").val();
+        let basaCorr = 0;
+
+        if (name == 1) { basaCorr = 12500; }
+        else if (name == 2) { basaCorr = 8500; }
+        else if (name == 3) { basaCorr = 9500; }
+        else if (name == 4) { basaCorr = 14500; }
+        else if (name == 5) { basaCorr = 12500; }
+        else if (name == 6) { basaCorr = 7500; }
+        else if (name == 7) { basaCorr = 35000; }
+        else if (name == 8) { basaCorr = 35000; }
+        else if (name == 9) { basaCorr = 7500; }
+        else if (name == 10) { basaCorr = 55000; }
+        else if (name == 11) { basaCorr = 45000; }
+        else if (name == 12) { basaCorr = 45000; }
+        else if (name == 13) { basaCorr = 13500; }
+        else if (name == 14) { basaCorr = 9750; }
+        else if (name == 15) { basaCorr = 15600; }
+        else if (name == 16) { basaCorr = 28500; }
+        else if (name == 17) { basaCorr = 45500; }
+        else if (name == 18) { basaCorr = 85000; }
+        else if (name == 19) { basaCorr = 13500; }
+        else if (name == 20) { basaCorr = 28000; }
+        else if (name == 21) { basaCorr = 43000; }
+        else if (name == 22) { basaCorr = 78000; }
+        else if (name == 23) { basaCorr = 38800; }
+        else if (name == 24) { basaCorr = 23500; }
+        else if (name == 25) { basaCorr = 225000; }
+        else if (name == 26) { basaCorr = 350000; }
+        else if (name == 27) { basaCorr = 45000000; }
+        else if (name == 28) { basaCorr = 225000; }
+        else if (name == 29) { basaCorr = 650000; }
+        else if (name == 30) { basaCorr = 35000; }
+        else if (name == 31) { basaCorr = 1800000; }
+        else if (name == 32) { basaCorr = 15600; }
+
+        // Auto-correct the price field
+        row.find(".base-price").val(basaCorr);
+        row.removeClass("error-row"); // Remove error highlighting
+    });
+
+    showModal(`
+        <strong style="color:green;font-size: large;">All incorrect values have been corrected!</strong>
+    `);
+});
+       
+       
+    $(".auto-correct-btn").hide(); 
+ 
+ 
+ $(".result").click(function() {
+	  $("#mainDiv").html('');
+	 result();
+	 });
+		
+		  });
+		
 }
