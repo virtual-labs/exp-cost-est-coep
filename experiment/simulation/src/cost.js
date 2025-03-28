@@ -273,6 +273,7 @@ $("#Header").html("<center><span>COST ESTIMATION</span></center>");
                 if ($("#dynamicTable tbody tr").length > 1) {
                     $(this).closest("tr").remove();
                     updateRowNumbers();
+                     showModal(`<strong style="color:#153f68;font-size: large;">Selected one row is removed</strong>`);
                 } else {
                   
                      showModal(`<strong style="color:#153f68;font-size: large;">At least one row is required</strong>`);
@@ -546,6 +547,7 @@ $(".auto-correct-btn").click(function() {
         // Auto-correct the price field
         row.find(".base-price").val(basaCorr);
         row.removeClass("error-row"); // Remove error highlighting
+        $(".result").show();
     });
 
     showModal(`
@@ -555,6 +557,8 @@ $(".auto-correct-btn").click(function() {
        
        
     $(".auto-correct-btn").hide(); 
+    $(".result").hide(); 
+    
  
  
  $(".result").click(function() {
