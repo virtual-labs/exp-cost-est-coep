@@ -5,20 +5,21 @@ Estimating a project cost is a deep science and need to be mastered differently.
 #### Start the Simulation
 -	Click on the "Start" button.
 -	Enter instrument name-wise details including:
-o	Name, Make and Model (Be realistic)
-o	Base price
-o	Quantity
-o	Calculate all data for first four instruments for P&F, Insurance, and freight
+1.	Name, Make and Model (Be realistic)
+1.	Base price
+1.	Quantity
+1.	Calculate all data for first four instruments for P&F, Insurance, and freight
+
 -	The system will then calculate:
-o	Packing and Forwarding (2%)
-o	Insurance (0.5%)
-o	Freight (1%)
-o	Total cost
+1.	Packing and Forwarding (2%)
+1.	Insurance (0.5%)
+1.	Freight (1%)
+1.	Total cost
 
 #### Add Instruments
--	Click on "Add Row" to add new instruments. The addition of instruments must be based on the requirement for the plant you are preparing estimation.
--	Enter the required details and check the values.
+-	Click on "Add Row" to add new instruments. The addition of instruments must be based on the requirement for the plant you are preparing estimation
+-	Enter the required details and check the values
 
 #### Get Results
--	Click on "Result" to view the final cost estimation.
--	If your cost estimation is either lower or upper than our estimated cost it will be informed.
+-	Click on "Result" to view the final cost estimation
+-	If your cost estimation is either lower or upper than our estimated cost it will be informed
