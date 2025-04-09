@@ -71,7 +71,7 @@ function result(){
     +'             <th>Actual</th>'
     +'          </tr>'
     +'           <tr>'
-    +'           <td><b> <center><strong class="correct">'+resultJson.rows+'</strong> </center></b></td>'
+    +'           <td><b> <center><strong class="correct">12</strong> </center></b></td>'
 	+'           <td><b> <center><strong class="wrong">'+resultJson.invalidRowCount+'</strong> </center></b></td>'
 	  +'         </table>'
     +'      </div>'
@@ -194,7 +194,7 @@ function result(){
 //    +'</div>'
     $("#mainDiv").html(htm);
 	
-	var piping=parseFloat((resultJson.rows/resultJson.invalidRowCount)*100);
+	var piping=parseFloat((12/resultJson.invalidRowCount)*100);
 	
 	
 //	var startPer=parseFloat((resultJson.animationStart/3)*100);
