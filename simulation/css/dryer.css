@@ -1,0 +1,95 @@
+  table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+/*             border: 1px solid #ddd; */
+/*             text-align: left; */
+/*             padding: 8px; */
+    border: 1px solid #ddd;
+    text-align: left;
+    padding: 8px;
+    color: #5b5e63;
+    font-size: 17px;
+    font-weight: 700;
+        }
+        th {
+           background-color: #dde1e5;
+    color: #000;
+    padding: 12px;
+        }
+        .input-box {
+            width: 60%;
+            padding: 5px;
+        }
+        .status {
+            font-size: 16px;
+        }
+        .correct {
+            color: green;
+        }
+        .wrong {
+            color: red;
+        }
+        #accuracy {
+            font-size: 18px;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        .group-color-1 {
+            background-color: #ffdddd;
+        }
+        .group-color-2 {
+            background-color: #ddffdd;
+        }
+        .group-color-3 {
+            background-color: #ddddff;
+        }
+         .legend-table {
+      background-color: #222; /* Dark background */
+      color: white;
+      padding: 15px;
+      border-radius: 8px;
+      display: inline-block;
+    }
+    .legend-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+    .legend-item:last-child {
+      margin-bottom: 0;
+    }
+    .legend-icon {
+      width: 16px;
+      height: 8px;
+      border-radius: 2px;
+      display: inline-block;
+      margin-right: 10px;
+    }
+    .legend-table {
+	  font-family: 'Roboto Mono', 'Fira Code', 'Consolas', monospace;
+	}
+	.legend-item {
+	  font-weight: bold; /* To make the text bold */
+	  font-size: 14px;   /* Adjust font size as needed */
+	  color: #fff;       /* Set text color to white */
+	}
+    .icon-tt01,ticon-tt01 { background-color: #ff5733; }
+    .icon-tt02 { background-color: #33ff57; }
+    .icon-ft { background-color: #3375ff; }
+    .icon-nt { background-color: #ff33a1; }
+    .icon-p1-speed { background-color: #ffbf33; }
+    .icon-fd-speed { background-color: #33ffc5; }
+    .icon-id-speed { background-color: #a633ff; }
+    .icon-heater { background-color: #ff33ff; }
+    
+    .ticon-tt01 { color: #ff5733;font-size:larger;font-weight:bold; }
+    .ticon-tt02 { color: #33ff57;font-size:larger;font-weight:bold; }
+    .ticon-ft { color: #3375ff;font-size:larger;font-weight:bold; }
+    .ticon-nt { color: #ff33a1;font-size:larger;font-weight:bold; }
+    .ticon-p1-speed { color: #ffbf33;font-size:larger;font-weight:bold; }
+    .ticon-fd-speed { color: #33ffc5;font-size:larger;font-weight:bold; }
+    .ticon-id-speed { color: #a633ff; font-size:larger;font-weight:bold;}
+    .ticon-heater { color: #ff33ff; font-size:larger;font-weight:bold;}
