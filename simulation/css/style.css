@@ -1,0 +1,469 @@
+.draggable {
+  width: 50px;
+  height: 50px;
+  background: red;
+ 
+}
+html {
+    scroll-behavior: smooth;
+}
+.droppable {
+  width: 150px;
+  height: 150px;
+  background: lightgrey;
+  margin: 5px; 
+/*  display:inline-block; */
+}
+p.accordion {
+    background-color:#505c62;
+   
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+    margin-bottom:10px;
+    color: #fff;
+}
+
+/* Add a background color to the accordion if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+p.accordion.active, p.accordion:hover {
+  
+        background-color: #404e56;
+    color: #fff;
+ 
+}
+
+/* Unicode character for "plus" sign (+) */
+p.accordion:after {
+    content: '\2795'; 
+    font-size: 13px;
+    color: #fff;
+    float: right;
+    margin-left: 5px;
+}
+
+/* Unicode character for "minus" sign (-) */
+p.accordion.active:after {
+    content: "\2796"; 
+}
+
+/* Style the element that is used for the panel class */
+
+
+div.panel.show {
+   
+        opacity: 1;
+    max-height:  fit-content; /* Whatever you like, as long as its more than the height of the content (on all screen sizes) */
+}
+.imgClass{
+	padding:3px;
+	margin:5px 1px 5px 2px;
+	 height:90px;
+	  width:87px;
+	background-color:#fff;
+	border: 4px solid #555;
+	border-radius:10px;
+}
+.subType{
+	    background-color: #5f6b70;
+    padding: 5px;
+    border-radius: 16px;
+    border-style: solid;
+    font-size: 16px;
+    font-color: #fff;
+    color: #fff;
+    font-weight: bold;
+}
+  
+.col-sm-3
+{
+	padding-right: 5px; 
+     padding-left: 5px;
+}
+.circle{
+	   width: 10px;
+    height: 10px;
+    background: #607d8b;
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    border-radius: 50px;
+}
+.dragCircle{
+	 cursor: pointer;
+    border-radius: 50%;
+}
+.line{
+	position:absolute; 
+	height:2px; 
+	background-color:black;
+}
+.Valve{
+	height:40px;
+	  width:40px;
+}
+.draggable {
+    cursor: pointer;
+    border-radius: 50%;
+}
+.container {
+    position: absolute;
+    top: 20%;
+    left: 0;
+    width: 100%;
+    margin: auto;
+    text-align: center;
+}
+
+h1,
+h2 {
+    color: #555;
+}
+
+/* Menu */
+
+.menu {
+    position: absolute;
+    width: 200px;
+    padding: 2px;
+    margin: 0;
+    border: 1px solid #bbb;
+    background: #eee;
+    background: linear-gradient(to bottom, #fff 0%, #e5e5e5 100px, #e5e5e5 100%);
+    z-index: 100;
+    border-radius: 3px;
+    box-shadow: 1px 1px 4px rgba(0,0,0,.2);
+    opacity: 0;
+    transform: translate(0, 15px) scale(.95);
+    transition: transform 0.1s ease-out, opacity 0.1s ease-out;
+    pointer-events: none;
+}
+
+.menu-item {
+    display: block;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    white-space: nowrap;
+}
+ #contextMenu {
+            width: 300px;
+            height: 200px;
+            padding: 20px;
+            border: 2px solid #333;
+            background-color: #f0f0f0;
+            text-align: center;
+            margin: 20px auto;
+        }
+.menu-btn { 
+    display: block;
+    color: #444;
+    font-family: 'Roboto', sans-serif;
+    font-size: 13px;
+    cursor: pointer;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    padding: 6px 8px;
+    border-radius: 3px;
+}
+
+button.menu-btn {
+    background: none;
+    line-height: normal;
+    overflow: visible;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    width: 100%;
+    text-align: left;
+}
+
+a.menu-btn {
+    outline: 0 none;
+    text-decoration: none;
+}
+
+.menu-text {
+    margin-left: 25px;
+}
+
+.menu-btn .fa {
+    position: absolute;
+    left: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.menu-item:hover > .menu-btn { 
+    color: #fff; 
+    outline: none; 
+    background-color: #2E3940;
+    background: linear-gradient(to bottom, #5D6D79, #2E3940);
+    border: 1px solid #2E3940;
+}
+
+.menu-item-disabled {
+    opacity: .5;
+    pointer-events: none;
+}
+
+.menu-item-disabled .menu-btn {
+    cursor: default;
+}
+
+.menu-separator {
+    display:block;
+    margin: 7px 5px;
+    height:1px;
+    border-bottom: 1px solid #fff;
+    background-color: #aaa;
+}
+
+.menu-item-submenu::after {
+    content: "";
+    position: absolute;
+    right: 6px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: 5px solid transparent;
+    border-left-color: #808080; 
+}
+
+.menu-item-submenu:hover::after {
+    border-left-color: #fff;
+}
+
+.menu .menu {
+    top: 4px;
+    left: 99%;
+}
+
+.menu-show,
+.menu-item:hover > .menu {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+    pointer-events: auto;
+}
+
+.menu-item:hover > .menu {
+    transition-delay: 300ms;
+}.context-menu {
+    display: none;
+    position: fixed;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    width: 150px;
+}
+
+.context-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.context-menu ul li {
+    padding: 10px;
+    cursor: pointer;
+    border-bottom: 1px solid #ddd;
+}
+
+.context-menu ul li:hover {
+    background-color: #f0f0f0;
+}
+.symbolName{
+    width:100px;
+    height:50px;
+/*     background:grey; */
+}
+.commmunicationSymbols,.pipesSymbols{
+padding: 3px;
+    margin: 5px 1px 5px 2px;
+    height: 70px;
+    width: 150px;
+    background-color: #fff;
+    border: 4px solid #555;
+    border-radius: 10px;
+}
+ footer {
+	background: rgb(125,176,169);
+background: linear-gradient(90deg, rgba(125,176,169,1) 0%, rgba(78,109,114,1) 31%, rgba(33,44,62,1) 100%);
+	padding: 2px 10px;
+	border-top: 5px solid #2a333c;
+	text-align: center;
+	color: #fff;
+	font-size: 16px;
+	font-weight: bold;
+	position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+
+}
+.btn1 {
+        margin-left:10px;
+        margin-right: 10px;
+        margin-top:7px;
+        float:right;
+        margin-bottom:10px;
+        padding: 7px; 
+        border:none; 
+        border-radius: 5px;
+        }
+.icon{
+	font-size:20px;color:green;
+}
+.modal-header{
+background-color: #343a40;
+    color: #fff;
+}
+.PMCValue{
+	    font-family:'digital-clock-font';
+/*     background-color: #000; */
+    color: #0d6efd;
+    padding: 3px 5px;
+    font-weight: 600;
+/*     border-style: double; */
+    letter-spacing: 1px;
+}
+.unit{
+	    font-size: 10px;
+	    margin-left:5px;
+    font-family: inherit;
+}
+
+#nextLevelFault,#verifyButton,#startBtn,#reset,#datasheet,#graph,#procedure,#btnResult,#tagDetail1,#tagDetails,#refMimic,#verify,#result{
+    border-color: teal;
+    background-color: teal;
+
+}
+.timerStyle{
+	       background-color: #42494f;
+    color: #e8ac6e;
+    font-weight: 700;
+    font-family: 'digital-clock-font';
+    letter-spacing: 1px;
+    
+	
+}
+ .panel {
+      border: 2px solid #000;
+      padding: 20px;
+      border-radius: 8px;
+      width: fit-content;
+      margin: 20px auto;
+      text-align: center;
+    }
+    .radio-label {
+      margin-right: 20px;
+    }
+    #selectedTime {
+      margin-top: 20px;
+      font-weight: bold;
+    }
+    #partA1,#partB1
+    {
+    	 width: 100px;
+    	 height:100px;
+    	 position: relative;
+    	  margin: 20px;
+    }
+    #partA,#partB{
+    border-style: solid;
+    border-color: #000;
+    width: -webkit-fill-available;
+    }
+    
+     /*////////// Procedure css /////////*/
+.section {
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    padding: 15px;
+    margin: 15px 0;
+    box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.1);
+}
+
+.tab-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #244747;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    border-bottom: 2px solid #244747; /* Applies a full-width bottom border */
+    display: block; /* Ensures the border spans full width */
+    width: 100%; /* Forces the border to cover full width */
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    font-size: 16px;
+    margin: 8px 0px;
+    line-height: 1.6;
+/*    list-style-type: circle;*/
+}
+
+.button {
+     border-color: teal;
+    background-color: teal;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+/*    cursor: pointer;*/
+    font-size: 14px;
+}
+
+.button:hover {
+    background-color: #0056b3;
+    cursor: none;
+}
+
+input[type="text"] {
+    padding: 6px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 300px;
+}
+
+.modal-content{
+    background-color: #ecf1f1;
+    }
+    
+   .card {
+            transition: transform 0.3s;
+        }
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        .instruction-box {
+            background: #fff;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            margin-top: 20px;
+        } 
+        
+        
+    .centered-label {
+             
+            text-align: center;
+            background-color: #7186d1;
+            padding: 2px;
+            border-radius: 5px;
+            margin-top: 20px; /* Added space above the label */
+             color: #fff; /* Text color */
+            font-family: Arial, sans-serif; /* Font style */
+            font-size: 20px; /* Font size */
+            font-weight: bold; /* Font weight */
+        
+        }     
