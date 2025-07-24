@@ -31,7 +31,7 @@ $("#Header").html("<center><span>COST ESTIMATION</span></center>");
                 <th>GST (18%)</th>
                 <th>Total Cost with GST</th>
                 <th>Qty</th>
-                <th>Total Cost</th>
+                <th>Total Cost (in Rs.)</th>
                 <th>Action</th>
             </tr>
         </thead>
