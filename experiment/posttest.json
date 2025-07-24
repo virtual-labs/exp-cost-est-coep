@@ -2,19 +2,6 @@
   "version": 2.0,
   "questions": [
     {
-      "question": "What was the primary objective of the cost estimation exercise in the project?",
-      "answers": {
-         "a": "To determine the project schedule",
-        "b": "To identify the project risks",
-        "c": "To establish a budget for the project",
-        "d": "To select the project location"
-		
-      },
-      
-      "correctAnswer": "c",
-      "difficulty": "beginner"
-    },
-    {
       "question": "Which cost estimation method was used in the project of automation?",
       "answers": {
         "a": "Bottom-up estimating",
