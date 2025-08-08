@@ -189,19 +189,19 @@ $("#coepLogo").click(function(evt) {
 	 $('#coepLogo').off('click');
 });
 
-$('#report').on('click', function() {
-			$('#report').prop("hidden",true);
-		    html2canvas(document.querySelector("#mainDiv")).then(canvas => {
-		        // Append the screenshot canvas to the body
-		        document.body.appendChild(canvas);
-		        $("canvas").css("display","none");
-		        // Optionally save the screenshot as an image
-		        var link = document.createElement('a');
-		        link.download = 'BoilerHeatExchanger_report.png';
-		        link.href = canvas.toDataURL();
-		        link.click();
-		    });
-		});
+//$('#report').on('click', function() {
+//			$('#report').prop("hidden",true);
+//		    html2canvas(document.querySelector("#mainDiv")).then(canvas => {
+//		        // Append the screenshot canvas to the body
+//		        document.body.appendChild(canvas);
+//		        $("canvas").css("display","none");
+//		        // Optionally save the screenshot as an image
+//		        var link = document.createElement('a');
+//		        link.download = 'BoilerHeatExchanger_report.png';
+//		        link.href = canvas.toDataURL();
+//		        link.click();
+//		    });
+//		});
 
 </script>
 </html>
