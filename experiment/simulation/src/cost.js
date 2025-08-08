@@ -521,7 +521,7 @@ $("#Header").html("<center><span>COST ESTIMATION</span></center>");
 			 htm1 =  `<div class="btn-container">
 			 <button class="btn result"  >Result</button> 
 			 </div>
-			 <img src="images/StandardCost1.png" class="img-fluid rounded" style=" max-width: 100%; height: auto;  align-items: center;">`;
+			 <img src="images/StandardCost1.png" class="img-fluid rounded" style=" max-width: 100%; height: auto; margin-bottom:50px;  align-items: center;">`;
 			 $("#mainDiv").html(htm1);
 			  $(".result").click(function() {
 				 console.log("hey");
